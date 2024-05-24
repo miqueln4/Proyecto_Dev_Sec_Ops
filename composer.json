@@ -9,8 +9,7 @@
     ],
     "autoload":{
         "classmap": [
-            "html",
-            "functions.php"
+            "html/"
         ]
     },
 

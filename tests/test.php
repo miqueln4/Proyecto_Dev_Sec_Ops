@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 include('../html/public/php/functions.php');
 
-class ValidatorTest extends TestCase
+class test extends TestCase
 {
     private $validator;
 

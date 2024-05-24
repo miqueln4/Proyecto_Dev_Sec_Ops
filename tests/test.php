@@ -1,5 +1,5 @@
 <?php
-include('../html/public/php/functions.php');
+include('functions.php');
 use PHPUnit\Framework\TestCase;
 
 

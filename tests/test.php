@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-include('../public/php/functions.php');
+include('../html/public/php/functions.php');
 
 class test extends TestCase
 {

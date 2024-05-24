@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 
 
-class Mytest extends TestCase
+class MyTest extends TestCase
 {
     public function testCheckDniValid()
     {

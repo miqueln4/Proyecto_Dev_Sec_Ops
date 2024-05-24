@@ -9,7 +9,7 @@
     ],
     "autoload":{
         "classmap": [
-            "html/public/php"
+            "../html/public/php"
         ]
     },
 

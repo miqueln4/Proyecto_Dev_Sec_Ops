@@ -10,7 +10,7 @@ class MyTest extends TestCase
     {
         $funct = new functions();
         $this->assertTrue($funct->check_dni("12345678Z"));
-        $this->assertTrue($funct->check_dni("87654321A"));
+        $this->assertTrue($funct->check_dni("45673254S"));
     }
 
     public function testCheckDniInvalid()
@@ -33,7 +33,7 @@ class MyTest extends TestCase
     public function testValidatePasswordInvalid()
     {
         $function = new functions();
-        $this->assertFalse($function->validatePassword("short1A!")); // Muy corta
+        $this->assertFalse($function->validatePassword("sort1A!")); // Muy corta
         $this->assertFalse($function->validatePassword("alllowercase1!")); // Sin mayuscula
         $this->assertFalse($function->validatePassword("ALLUPPERCASE1!")); // Sin minuscula
         $this->assertFalse($function->validatePassword("NoNumber!")); // Sin numero

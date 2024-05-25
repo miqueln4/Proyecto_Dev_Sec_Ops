@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 25-05-2024 a las 15:22:57
+-- Tiempo de generación: 25-05-2024 a las 15:49:01
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.8
 
@@ -41,8 +41,8 @@ CREATE TABLE `galeria` (
 --
 
 INSERT INTO `galeria` (`id`, `user_id`, `file_path`, `file_type`, `upload_date`, `id_noticia`) VALUES
-(5, 1, '../../images/69c6015eefe413258db780ee9f11f59a.jpg', 'image/jpeg', '2024-05-22 23:30:44', 9),
-(11, 1, '../../images/e5d2ecc16c630b6ccd38e4d95c5c6f65.jpg', 'image/jpeg', '2024-05-23 17:51:43', 15);
+(12, 11, '../../images/e98fc4fc99d48859e93c8032a01f5e0d.jpg', 'image/jpeg', '2024-05-25 15:48:16', 16),
+(13, 11, '../../images/ee5a9f482340a7fd80a11b2ac35c4e5c.jpg', 'image/jpeg', '2024-05-25 15:48:37', 17);
 
 -- --------------------------------------------------------
 
@@ -63,10 +63,8 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id_noticia`, `descripcion`, `titulo`, `fecha`, `username`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consectetur sed arcu nec dictum. Fusce lobortis nunc ex. Nam semper sem id felis sagittis lacinia. In ultrices pulvinar mattis. Aliquam erat volutpat. Phasellus malesuada aliquam mauris, vel consectetur orci semper eu. Vivamus nec feugiat quam, rutrum pretium neque. Praesent interdum, eros sit amet convallis consectetur, felis est porta quam, quis consectetur risus justo id dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis tristique est sit amet bibendum auctor. Fusce hendrerit lacus sit amet venenatis mollis. Nam dignissim tortor eu leo venenatis, tempus sodales arcu pulvinar. Etiam mattis mauris lacinia magna fermentum placerat. Donec sit amet placerat dolor, id molestie mi. Sed molestie elementum arcu, ac tincidunt enim rutrum eu.', 'Buenos dias', '2024-05-21 11:05:57', 'miqueln4'),
-(4, 'ewfq4t243tergdyju76iue54ytgrf', 'dfawefwaf', '2024-05-22 15:22:44', 'miqueln4'),
-(9, 'Nanosecso jiji', 'EL NANO', '2024-05-22 23:30:44', 'miqueln4'),
-(15, 'hola', 'msakdnsa', '2024-05-23 17:51:43', 'miqueln4');
+(16, 'Prueba', 'Messi chiquito', '2024-05-25 15:48:16', 'qwe'),
+(17, 'Prueba 2', 'Nanosecso', '2024-05-25 15:48:37', 'qwe');
 
 -- --------------------------------------------------------
 
@@ -88,8 +86,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `name`, `email`, `password`, `dni`) VALUES
-(1, 'miqueln4', 'miquel', 'miqnavcho@alu.edu.gva.es', '489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35', ''),
-(8, 'qwe', 'qwe1', 'contact@salsequery.com', '1f00ea2d59a8eb240d833f87c5985384536a674853e825fb9756c3121f4a66ee', '46275049S');
+(11, 'qwe', 'qwe', 'qwe@qwe.es', 'b65d86fa7a721c574e2b899ce02734eaf2d79e1b3e3545878f9d252e0cf597fb', '12345678Z');
 
 --
 -- Índices para tablas volcadas
@@ -126,19 +123,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `galeria`
 --
 ALTER TABLE `galeria`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id_noticia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_noticia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

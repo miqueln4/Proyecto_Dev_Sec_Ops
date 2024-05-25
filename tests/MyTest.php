@@ -1,21 +1,21 @@
 <?php
-
+include('functions.php');
 use PHPUnit\Framework\TestCase;
 
-include('../html/public/php/functions.php');
 
-class test extends TestCase
+
+class MyTest extends TestCase
 {
     public function testCheckDniValid()
     {
-        $function = new Functions();
-        $this->assertTrue($function->check_dni("12345678Z"));
-        $this->assertTrue($function->check_dni("87654321A"));
+        $funct = new functions();
+        $this->assertTrue($funct->check_dni("12345678Z"));
+        $this->assertTrue($funct->check_dni("87654321A"));
     }
 
     public function testCheckDniInvalid()
     {
-        $function = new Functions();
+        $function = new functions();
         $this->assertFalse($function->check_dni("12345678A")); // Letra no valida
         $this->assertFalse($function->check_dni("A2345678Z")); // Formato no valido
         $this->assertFalse($function->check_dni("1234567Z"));  // Muy corta
@@ -25,14 +25,14 @@ class test extends TestCase
 
     public function testValidatePasswordValid()
     {
-        $function = new Functions();
+        $function = new functions();
         $this->assertTrue($function->validatePassword("Valid123!"));
         $this->assertTrue($function->validatePassword("Anoth3r$"));
     }
 
     public function testValidatePasswordInvalid()
     {
-        $function = new Functions();
+        $function = new functions();
         $this->assertFalse($function->validatePassword("short1A!")); // Muy corta
         $this->assertFalse($function->validatePassword("alllowercase1!")); // Sin mayuscula
         $this->assertFalse($function->validatePassword("ALLUPPERCASE1!")); // Sin minuscula

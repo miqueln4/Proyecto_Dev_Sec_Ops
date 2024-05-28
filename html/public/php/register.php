@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Convertir la contraseña a hash
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    $hashedPassword = $functions->encrypt_password($password);
 
     try {
         // Preparar y ejecutar la consulta SQL
@@ -50,13 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
 
         if ($stmt->execute()) {
-            echo "ok";
+            header('Location: ../../index.html');
         } else {
-            echo "Error";
+            echo "Error al insertar";
         }
-        $_SESSION['user_id'] = $username;
-        header('Location: ../../posts.php');
         exit();
+        
     } catch (PDOException $e) {
         // Capturar errores
         error_log("Error al registrar el usuario: " . $e->getMessage());
@@ -66,5 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     echo "Método no permitido";
+    exit();
 }
 ?>

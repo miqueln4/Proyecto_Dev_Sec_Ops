@@ -15,16 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
+        $tmp_user = $stmt->fetch(PDO::FETCH_ASSOC);
         
 
         if ($stmt->rowCount() == 1) {
-            $tmp_user = $stmt->fetch(PDO::FETCH_ASSOC);
+            
             $_SESSION['user_id'] = $tmp_user['id'];
 
             header('Location: ../../posts.php');
             exit();
         } else {
             echo "Invalid username or password";
+            exit();
         }
 
     } catch (PDOException $e) {

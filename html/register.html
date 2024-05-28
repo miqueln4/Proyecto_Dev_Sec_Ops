@@ -3,7 +3,7 @@
 <head>
   <title>Register</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="public/CSS/password-strength.css">
   <style>
     .user-icon {
@@ -51,17 +51,17 @@
 
   <div class="container mt-5">
     <h1 class="text-center mb-5">Registrate</h1>
-    <form id="register-form" action="public/php/register.php" method="POST">
+    <form id="register-form" action="public/php/register.php" method="POST" autocomplete="off">
       <div class="form-group row">
         <label for="username" class="col-sm-2 col-form-label">Nombre de usuario</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required pattern="[a-zA-Z0-9_]{3,20}">
         </div>
       </div>
       <div class="form-group row">
         <label for="name" class="col-sm-2 col-form-label">Nombre</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required pattern="[a-zA-Z\s]{3,50}">
         </div>
       </div>
       <div class="form-group row">
@@ -73,7 +73,7 @@
       <div class="form-group row">
         <label for="dni" class="col-sm-2 col-form-label">DNI</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="dni" name="dni" placeholder="Enter DNI" required>
+          <input type="text" class="form-control" id="dni" name="dni" placeholder="Enter DNI" required pattern="^\d{8}[A-Z]$">
           <div id="dni-feedback" class="invalid-feedback"></div>
         </div>
       </div>
@@ -102,16 +102,14 @@
     </form>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9M/ScQsAP7hUibX39jJAKjZZ+p9YJ1hT8A5Z5" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script>
     document.getElementById('register-form').addEventListener('submit', function(event) {
-      // Validación de datos antes de enviar
       let valid = true;
 
-      // Validar el DNI
       const dniField = document.getElementById('dni');
       const dniFeedback = document.getElementById('dni-feedback');
       const dni = dniField.value.trim();
@@ -131,7 +129,6 @@
         dniFeedback.textContent = 'DNI inválido';
       }
 
-      // Validar que las contraseñas coincidan
       const passwordField = document.getElementById('password');
       const repeatPasswordField = document.getElementById('repeat-password');
       const repeatPasswordFeedback = document.getElementById('repeat-password-feedback');

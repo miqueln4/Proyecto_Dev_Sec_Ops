@@ -20,8 +20,6 @@ try {
     exit();
 }
 
-
-
 // Obtener las imágenes del usuario
 try {
     $stmt = $conn->prepare("SELECT * FROM galeria WHERE user_id = :user_id");
@@ -75,7 +73,7 @@ try {
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="perfil.html">
+              <a class="nav-link" href="perfil.php">
                 <img src="../../images/usuario_perfil.avif" alt="User" class="user-icon">
               </a>
             </li>
@@ -98,6 +96,7 @@ try {
             <p>DNI: <?php echo $user['dni'];?></p>
           </div>
         </div>
+        <a href="cambio_contraseña.php" class="btn btn-primary mt-3">Cambiar Contraseña</a>
       </div>
     </div>
 
@@ -107,7 +106,6 @@ try {
         <div class="col-md-4">
           <div class="card mb-4">
             <img src="<?php echo $image['file_path']; ?>" class="card-img-top" alt="...">
-            
           </div>
         </div>
       <?php endforeach; ?>

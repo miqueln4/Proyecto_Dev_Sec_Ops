@@ -65,5 +65,13 @@ function upload_file($file, $allowed_extensions, $allowed_magic_numbers) {
     return false;
 }
 
+function password_verify($password1, $password2){
+    if($password1 == $password2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 }
 

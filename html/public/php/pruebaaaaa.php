@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->bindParam(':password', $new_password_hash);
                     $stmt->bindParam(':id', $user_id);
                     $stmt->execute();
-                    header('Location: ../../posts.php');
+                    $success_message = "Contraseña actualizada exitosamente.";
                 } else {
                     $error_message = "La nueva contraseña no cumple con los criterios de fortaleza.";
                 }
@@ -63,8 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <h2 class="text-center">Cambiar Contraseña</h2>
         <?php if (isset($error_message)): ?>
-        
-        <div class="alert alert-danger" ><?php echo $error_message;?></div>
+            <div class="alert alert-danger"><?php echo $error_message; ?></div>
+        <?php endif; ?>
+        <?php if (isset($success_message)): ?>
+            <div class="alert alert-success"><?php echo $success_message; ?></div>
         <?php endif; ?>
         <form method="post" action="cambio_contraseña.php">
             <div class="form-group">
@@ -94,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
